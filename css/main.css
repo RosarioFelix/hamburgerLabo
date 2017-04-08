@@ -1,0 +1,383 @@
+
+/*Direct style for nav tag*/
+nav{
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  height: 80px;
+  z-index: 1000;
+  margin-top: 0;
+  position: fixed;
+  padding-top: 0px;
+  background: black;
+  transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+/*Javascript style toggle for menu appear and desappear*/
+.header-in{
+  background-color: rgba(247, 182, 23, 0.81);
+}
+/**/
+/*Navgation general styles*/
+/*Background Menu*/
+nav .nav-background {
+  top: 0px;
+  opacity:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1500;
+  display: table;
+  background: none;
+  position: absolute;
+  transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+nav.open .nav-background {
+  opacity: 1;
+  background-color: rgba(247, 182, 23, 0.81) !important;
+  transition: background-color 0.6s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+nav.open {
+  height: 100%;
+  transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+/*Navigation list*/
+nav ul {
+  top: -10%;
+  padding: 0;
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  display: table-cell;
+  vertical-align: middle;
+  transform: perspective(600px) rotateX(10deg);
+  transition: all 0.5s cubic-bezier(0.7, 0, 0.36, 0.63);
+}
+nav ul li{
+  visibility: hidden;
+}
+nav ul li a{
+  color:white;
+  width: 100%;
+  display: block;
+  padding: 8px 0 0;
+  letter-spacing: -0.06em;
+}
+nav ul li a:hover{
+  color:#f7b617;
+  background-color: white;
+}
+nav.open ul {
+  top: 0;
+  opacity: 1;
+  margin-top: 0;
+  visibility: visible;
+  transform: perspective(600px) rotateX(0deg);
+}
+nav.open ul li {
+  color:#fff;
+  font-size: 60px;
+  visibility: visible !important;
+}
+/*Menu bar logo and menu styles general*/
+/*Logo*/
+.logo,
+.menu{
+  position: absolute;
+  z-index: 2000;
+}
+.logo{
+  left:15px;
+  top:-4px;
+  width: 70px;
+  height: 74px;
+  padding: 0.4% 3%;
+  text-align: left;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("../img/laboratoria.svg");
+}
+.open .logo,
+nav.solid #logo .logo {
+  background-image: url("../img/laboratoria.svg");
+}
+.logo img{
+  z-index: 2000;
+}
+/*Hamburger*/
+.menu{
+  top:0;
+  right:0;
+  height: 4px;
+  width: 24px;
+  text-align:right;
+  margin: 2rem 2rem;
+  background: #f7b617;
+  transition: all 0.3s;
+}
+.menu:before{
+  top: -8px;
+}
+.menu:after{
+  top: 8px;
+}
+#toggle:hover:before {
+  top: -9px;
+}
+#toggle:hover:after {
+  top: 9px;
+}
+.menu:before,
+.menu:after{
+  content: '';
+  width: 24px;
+  height: 4px;
+  z-index: -1;
+  display: block;
+  position: absolute;
+  background: #f7b617;
+  transition: all 0.3s;
+}
+#toggle:hover {
+  transition: top 0.4s;
+}
+/*Javascript style toggle for menu appear and desappear style background*/
+.solid #toggle .menu {
+  background: #fff;
+}
+.solid #toggle .menu:after{
+  background-color: #fff;
+}
+.solid #toggle .menu:before{
+  background-color: #fff;
+}
+/*Javascript style toggle for menu hamburger appear and desappear*/
+.open .menu {
+  background: none !important;
+}
+.open .menu:after {
+  top: 0 !important;
+  background: #fff !important;
+  transform: rotate(45deg);
+}
+.open .menu:before {
+  top: 0 !important;
+  background: #fff !important;
+  transform: rotate(-45deg);
+}
+
+/*maquina de escribrir*/
+
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width:30.3em }
+}
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width:30.3em }
+}
+/* blink-caret = | cursor*/
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent; }
+
+}
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent; }
+
+}
+body { font-family: Consolas, monospace; }
+
+.tipeo{
+  margin-top:300px;
+  margin-left: 300px;
+  margin-right: 0px;
+}
+h1 {
+
+    width:30.3em;
+    font-size:200%;
+    color: #FACC2E;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right: 1em solid black;
+
+    /* infinite alternate para que desaparezca el texto */
+    -webkit-animation: typing 5s steps(30) infinite alternate, /* los pasos o bloques de como aparece */
+                        blink-caret 1s step-end infinite;
+}
+/*chicas loboratoria*/
+
+.chicas,  .grid {
+	cursor: pointer;
+	box-sizing: border-box;
+	width: 200px;
+	position: relative;
+	transition: 2s;
+	background-color : none;
+	overflow: hidden;
+	display: inline-block;
+  border-radius: 100px;
+
+
+}
+
+.chicas {
+	overflow: hidden;
+	margin: 0px;
+}
+#coders{
+	margin: 10%;
+}
+
+.img-box{
+	cursor: pointer;
+	width: 200px;
+	height: 200px;
+	position: relative;
+	transition: 2s;
+  border-radius: 100px;
+
+}
+
+.grid {
+	height: 200px;
+  left: 50px;
+}
+
+
+.chicas:hover .img-box{
+	transform:scale(1.2);
+	z-index: 2;
+	height: 200px;
+
+
+}
+.chicas:hover .text{
+	display: inline-block;
+	z-index: 100;
+}
+
+.overlay {
+  border-radius: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 100;
+}
+
+.overlay:hover {
+	background: rgba(249,203,11, 0.5);
+}
+
+.text{
+	display: none;
+  text-align: center;
+	font-size: 30px;
+	color: white;
+  font-weight: bold;
+	position: absolute;
+	z-index: 5;
+	margin-left: 15px;
+	margin-top: 80px;
+	transition: 3s;
+}
+/*css del footer*/
+
+#footer{
+
+  background: black;
+  margin: 0;
+  padding-bottom: : 0;
+  height: 50px;
+  margin-bottom: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+
+}
+h3{
+  text-align: center;;
+  color: white;
+}
+ /* mensaje chicas laboratoria sexta promo */
+#todas{
+
+   margin-top: 200px;
+   margin-left:400px;
+ }
+
+
+/*body{
+  background: #FFFFFF;
+}
+.cabecera{
+
+  height: 100px;
+}
+.header{
+  /*transparencia*/
+/*
+  background: #151515;
+  opacity: 0.7;
+}
+img{
+  height: 100px;
+  width: 130px;
+}
+
+button{
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  /* mover de posicion- centrado*/
+  /*
+  top:5%;
+  left: 90%;
+  outline: none;
+  /*modelo de cursor*/
+  /*
+  cursor: pointer;
+  border: 3px solid #DBA901;
+  border-radius: 5px;
+  transition:0.5s;
+}
+.line{
+  position: relative;
+  height: 3px;
+  background: #DBA901;
+  width: 30px;
+  display: block;
+  border-radius: 5px;
+  margin: 5px 0;
+  transition: 0.5s;
+}
+button:hover .line:nth-child(1) {
+  top :-1px
+}
+button:hover .line:nth-child(3) {
+  top :1px
+}
+button:active{
+  /*para convertirlo en circulo al pasar el mouse*/
+  /*
+  border-radius: 50px;
+}
+/* selecciona al hijo*/
+/*
+button:active .line:nth-child(1){
+  transform: translateY(9px) rotate(-40deg);
+}
+button:active .line:nth-child(3){
+  transform: translateY(-9px) rotate(40deg);
+}
+button:active .line:nth-child(2){
+  opacity: 0;
+}
+*/
